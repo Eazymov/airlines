@@ -9,13 +9,12 @@ package airlines;
  *
  * @author eazymov
  */
-public class Airlines {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class City {
+    String id;
+    String name = "";
     
+    City(String name) {
+        this.id = name;
+        this.name = name;
+    }
 }
