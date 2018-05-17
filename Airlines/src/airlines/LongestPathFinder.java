@@ -30,7 +30,7 @@ public class LongestPathFinder {
     }
 
     public List<List<City>> getAllPaths(List<City> arr) {
-      if (arr.size() > 1) {
+        if (arr.size() > 1) {
             City beg = arr.get(0);
             List<List<City>> supArr = this.getAllPaths(arr.subList(1, arr.size()));
             List<List<City>> subArr = new ArrayList<>();
@@ -40,9 +40,12 @@ public class LongestPathFinder {
 
                 for (int j = 0; j <= childArr.size(); j++) {
                     List<City> temp = supArr.get(i).subList(0, j);
+                    int supArrSize = supArr.size();
                     
                     temp.add(beg);
-                    temp.addAll(supArr.get(i).subList(j, supArr.size()));
+                    if (supArrSize > j) {
+                        temp.addAll(supArr.get(i).subList(j, supArrSize));
+                    }
 
                     subArr.add(temp);
                 }
@@ -50,20 +53,20 @@ public class LongestPathFinder {
 
             return subArr;
         } else {
-              List<List<City>> result = new ArrayList<>();
-              
-              result.add(arr);
+            List<List<City>> result = new ArrayList<>();
 
-              return result;
+            result.add(arr);
+
+            return result;
         }
     }
     
     private List<City> getLongestPath(
         List<List<City>> paths
     ) {
-        List<City> longestPath = paths.get(0);
+        List<City> longestPath = new ArrayList<>();
         
-        for (int idx = 1; idx < paths.size(); idx++) {
+        for (int idx = 0; idx < paths.size(); idx++) {
             List<City> curPath = paths.get(idx);
             
             if (curPath.size() > longestPath.size()) {
@@ -79,6 +82,8 @@ public class LongestPathFinder {
         
         for (int idx = 0; idx < paths.size(); idx++) {
             List<City> path = paths.get(idx);
+            
+            if (path.size() == 0) continue;
 
             if (path.get(0) != firstCity) continue;
 

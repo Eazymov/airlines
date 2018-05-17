@@ -30,6 +30,15 @@ public class Main {
 
         ArrayList<City> cities = new ArrayList<>();
         
+        cities.add(Vancouver);
+        cities.add(Yellowknife);
+        cities.add(Edmonton);
+        cities.add(Calgary);
+        cities.add(Winnipeg);
+        cities.add(Toronto);
+        cities.add(Montreal);
+        cities.add(Halifax);
+        
         waysList.addWay(Vancouver, Edmonton);
         waysList.addWay(Vancouver, Calgary);
         waysList.addWay(Calgary, Winnipeg);
@@ -43,7 +52,7 @@ public class Main {
         City firstCity = Vancouver;
         LongestPathFinder longestPathFinder = new LongestPathFinder();
         List<City> longestWay = longestPathFinder.find(cities, waysList, firstCity);
-        
+
         for (int idx = 0; idx < longestWay.size(); idx++) {
             System.out.println(longestWay.get(idx).name);
         }
