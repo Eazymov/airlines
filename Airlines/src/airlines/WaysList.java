@@ -1,46 +1,78 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright (c) 2018 Eduard Azymov
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * 
  */
 package airlines;
 
 import java.util.Map;
 import java.util.HashMap;
 
-/**
- *
- * @author eazymov
- */
 public class WaysList {
     private final Map<String, Map<String, Boolean>> map;
 
+    /**
+     * Инициализирует поле map
+     */
     public WaysList() {
         this.map = new HashMap<>();
     }
-    
-    public void addWay(City cityA, City cityB) {
-        String cityAid = cityA.id;
-        String cityBid = cityB.id;
 
-        if (!map.containsKey(cityAid)) {
-            map.put(cityAid, new HashMap<>());
+    /**
+     * Добавляет путь между двумя городами
+     *
+     * @param firstCity  первый город
+     * @param secondCity второй город
+     */
+    public void addWay(City firstCity, City secondCity) {
+        String firstCityId = firstCity.id;
+        String secondCityId = secondCity.id;
+
+        if (!map.containsKey(firstCityId)) {
+            map.put(firstCityId, new HashMap<>());
         }
 
-        if (!map.containsKey(cityBid)) {
-            map.put(cityBid, new HashMap<>());
+        if (!map.containsKey(secondCityId)) {
+            map.put(secondCityId, new HashMap<>());
         }
-        
-        map.get(cityAid).put(cityBid, true);
-        map.get(cityBid).put(cityAid, true);
+
+        map.get(firstCityId).put(secondCityId, true);
+        map.get(secondCityId).put(firstCityId, true);
     }
     
-    public boolean hasWay(City cityA, City cityB) {
-        String cityAid = cityA.id;
-        String cityBid = cityB.id;
-
-        Map<String, Boolean> cityAways = map.get(cityAid);
+    /**
+     * Проверяет есть ли путь между двумя городами
+     *
+     * @param firstCity  первый город
+     * @param secondCity второй город
+     * @return true      Если путь между двумя городами существует, иначе false
+     */
+    public boolean hasWay(City firstCity, City secondCity) {
+        String firstCityId = firstCity.id;
+        String secondCityId = secondCity.id;
         
-        return cityAways.get(cityBid);
+        if (!map.containsKey(firstCityId)) return false;
+
+        Map<String, Boolean> firstCityWays = map.get(firstCityId);
+
+        return firstCityWays.containsKey(secondCityId);
     }
 }
