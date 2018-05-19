@@ -1,0 +1,40 @@
+{
+  "cities": [
+    {
+      "name": "Vancouver",
+      "isFirst": true
+    },
+    {
+      "name": "Yellowknife"
+    },
+    {
+      "name": "Edmonton"
+    },
+    {
+      "name": "Calgary"
+    },
+    {
+      "name": "Winnipeg"
+    },
+    {
+      "name": "Toronto"
+    },
+    {
+      "name": "Montreal"
+    },
+    {
+      "name": "Halifax"
+    }
+  ],
+  "ways": [
+    ["Vancouver", "Edmonton"],
+    ["Vancouver", "Calgary"],
+    ["Calgary", "Winnipeg"],
+    ["Winnipeg", "Toronto"],
+    ["Toronto", "Halifax"],
+    ["Montreal", "Halifax"],
+    ["Edmonton", "Montreal"],
+    ["Edmonton", "Yellowknife"],
+    ["Edmonton", "Calgary"]
+  ]
+}

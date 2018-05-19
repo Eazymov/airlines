@@ -26,10 +26,6 @@ package airlines;
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- *
- * @author eazymov
- */
 public class Main {
     public static void main(String[] args) {
         City Vancouver = new City("Vancouver");
@@ -66,14 +62,18 @@ public class Main {
         
         City firstCity = Vancouver;
         LongestPathFinder longestPathFinder = new LongestPathFinder();
-        List<City> longestWay = longestPathFinder.find(cities, waysList, firstCity);
+        /* longestPathFinder.setCities(cities);
+        longestPathFinder.setWaysList(waysList);
+        longestPathFinder.setFirstCity(firstCity); */
+        longestPathFinder.readFromFile("./data.json");
+        List<City> longestWay = longestPathFinder.find();
 
-        System.out.println("Начинаем путь с города " + firstCity.name);
+        System.out.println("Начинаем путь с города " + firstCity.getName());
 
         for (int idx = 1; idx < longestWay.size() - 1; idx++) {
-            System.out.println("-> Летим в " + longestWay.get(idx).name);
+            System.out.println("-> Летим в " + longestWay.get(idx).getName());
         }
 
-        System.out.println("Возвращаемся в " + firstCity.name);
+        System.out.println("Возвращаемся в " + firstCity.getName());
     }
 }
