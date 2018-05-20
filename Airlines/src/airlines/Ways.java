@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 Eduard Azymov.
+ * Copyright 2018 eazymov.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,26 +26,23 @@ package airlines;
 import java.util.Map;
 import java.util.HashMap;
 
-public class WaysList {
+class Ways {
     private final Map<String, Map<String, Boolean>> map;
 
     /**
      * Инициализирует поле map
      */
-    public WaysList() {
+    public Ways() {
         this.map = new HashMap<>();
     }
 
     /**
-     * Добавляет путь между двумя городами
+     * Добавляет путь между двумя городами 
      *
-     * @param firstCity  первый город
-     * @param secondCity второй город
+     * @param firstCityId  уникальный идентификатор первого города
+     * @param secondCityId уникальный идентификатор второго города
      */
-    public void addWay(City firstCity, City secondCity) {
-        String firstCityId = firstCity.getId();
-        String secondCityId = secondCity.getId();
-
+    public void addWay(String firstCityId, String secondCityId) {
         if (!map.containsKey(firstCityId)) {
             map.put(firstCityId, new HashMap<>());
         }

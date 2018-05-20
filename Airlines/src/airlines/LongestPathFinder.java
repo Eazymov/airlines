@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 Eduard Azymov.
+ * Copyright 2018 eazymov.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,118 +23,156 @@
  */
 package airlines;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.List;
-import java.util.ArrayList;
+import java.io.FileReader;
 import java.util.Iterator;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class LongestPathFinder {
+class LongestPathFinder {
+
+    private Ways ways;
     private City firstCity;
-    private WaysList waysList;
     private List<City> cities;
-    
+
     /**
      * Инициализирует значения по умолчанию
      */
     public LongestPathFinder() {
         this.cities = new ArrayList<>();
-        this.waysList = new WaysList();
+        this.ways = new Ways();
     }
-    
+
     /**
      * Задает поле cities
      *
      * @param cities список городов
      */
-    public void setCities(List<City> cities) {
+    private void setCities(List<City> cities) {
         this.cities = cities;
     }
-    
-    /**
-     * Возвращает поле cities
-     *
-     * @return {@code List<City>}
-     */
-    public List<City> getCities() {
-        return this.cities;
-    }
-    
+
     /**
      * Задает поле waysList
      *
      * @param waysList набор всех путей между городами
      */
-    public void setWaysList(WaysList waysList) {
-        this.waysList = waysList;
+    private void setWays(Ways waysList) {
+        this.ways = waysList;
     }
-    
-    /**
-     * Возвращает поле waysList
-     *
-     * @return {@code WaysList}
-     */
-    public WaysList getWaysList() {
-        return this.waysList;
-    }
-    
+
     /**
      * Задает поле firstCity
      *
      * @param firstCity город с которого начинается путешествие
      */
-    public void setFirstCity(City firstCity) {
+    private void setFirstCity(City firstCity) {
         this.firstCity = firstCity;
     }
-    
+
     /**
-     * Возвращает поле firstCity
+     * Читает данные из файла в формате JSON
      *
-     * @return {@code City}
+     * @param src путь к файлу
+     * @throws java.io.IOException возбуждается когда файл не найден
+     * @throws org.json.simple.parser.ParseException возбуждается когда файл имеет некорректный формат
      */
-    public City getFirstCity() {
-        return this.firstCity;
-    }
-    
-    public void readFromFile(String src) {
+    public void readFromFile(String src) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
+        Object text = parser.parse(new FileReader(src));
+        JSONObject json = (JSONObject) text;
 
         try {
-            Object text = parser.parse(new FileReader(src));
-
-            JSONObject json = (JSONObject) text;
-            JSONArray citiesJson = (JSONArray) json.get("cities");
-            JSONArray waysListJson = (JSONArray) json.get("ways");
-            
-            Iterator<JSONObject> citiesIterator = citiesJson.iterator();
-            
-            while (citiesIterator.hasNext()) {
-                JSONObject cityJson = citiesIterator.next();
-                String cityName = (String) cityJson.get("name");
-                City city = new City(cityName);
-                
-                this.cities.add(city);
-            }
-            
-            Iterator<JSONArray> waysListIterator = citiesJson.iterator();
-            
-            while (waysListIterator.hasNext()) {
-                JSONArray citiesPair = waysListIterator.next();
-                
-                // this.waysList.addWay(citiesPair.get(0), citiesPair.get(1));                
-            }
-        } catch (IOException | ParseException e) {
+            readCitiesFromJson(json);
+            readFirstCityFromJson(json);
+            readWaysFromJson(json);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("json не содержит поля " + e.getMessage());
         }
     }
 
     /**
+     * Читает список городов из JSON
+     *
+     * @param json данные в формате JSON которые содержат список городов
+     */
+    private void readCitiesFromJson(JSONObject json) {
+        ArrayList<City> citiesList = new ArrayList<>();
+        String jsonCityField = JsonFields.CITIES.toString();
+        JSONArray citiesJson = (JSONArray) json.get(jsonCityField);
+
+        if (citiesJson == null) {
+            throw new IllegalArgumentException(jsonCityField);
+        }
+
+        for (JSONObject cityJson : (Iterable<JSONObject>) citiesJson) {
+            String cityId = (String) cityJson.get("id");
+            String cityName = (String) cityJson.get("name");
+            City city = new City(cityId, cityName);
+
+            citiesList.add(city);
+        }
+
+        this.setCities(citiesList);
+    }
+
+    /**
+     * Читает уникальный идентификатор первого города из JSON
+     *
+     * @param json данные в формате JSON которые содержат ID первого города
+     */
+    private void readFirstCityFromJson(JSONObject json) {
+        String jsonFirstCityIdField = JsonFields.FIRST_CITY_ID.toString();
+        String firstCityId = (String) json.get(jsonFirstCityIdField);
+
+        if (firstCityId == null) {
+            throw new IllegalArgumentException(jsonFirstCityIdField);
+        }
+
+        for (City city : this.cities) {
+            if (city.getId().equals(firstCityId)) {
+                this.setFirstCity(city);
+            }
+        }
+    }
+
+    /**
+     * Читает список путей между городами из JSON
+     *
+     * @param json данные в формате JSON которые содержат список путей
+     */
+    private void readWaysFromJson(JSONObject json) {
+        Ways ways = new Ways();
+        String jsonWaysField = JsonFields.WAYS.toString();
+        JSONArray waysListJson = (JSONArray) json.get(jsonWaysField);
+
+        if (waysListJson == null) {
+            throw new IllegalArgumentException(jsonWaysField);
+        }
+
+        Iterator<JSONArray> waysListIterator = waysListJson.iterator();
+
+        if (waysListJson.isEmpty()) return;
+
+        while (waysListIterator.hasNext()) {
+            JSONArray citiesWayIDs = waysListIterator.next();
+            String firstCityId = (String) citiesWayIDs.get(0);
+            String secondCityId = (String) citiesWayIDs.get(1);
+
+            ways.addWay(firstCityId, secondCityId);
+        }
+
+        this.setWays(ways);
+    }
+
+    /**
      * Находит длиннейший возможный путь
-     * 
+     *
      * @return {@code City<List>}
      */
     public List<City> find() {
@@ -146,16 +184,14 @@ public class LongestPathFinder {
 
     /**
      * Возвращает длиннейший путь из списка переданных
-     * 
+     *
      * @param paths список путей
      * @return {@code List<City>}
      */
     private List<City> getLongestPath(List<List<City>> paths) {
         List<City> longestPath = new ArrayList<>();
 
-        for (int idx = 0; idx < paths.size(); idx++) {
-            List<City> curPath = paths.get(idx);
-
+        for (List<City> curPath : paths) {
             if (curPath.size() > longestPath.size()) {
                 longestPath = curPath;
             }
@@ -165,30 +201,24 @@ public class LongestPathFinder {
     }
 
     /**
-     * Возвращает отфильтрованный список состоящий из корректных
-     * неразрывных путей
+     * Возвращает отфильтрованный список состоящий из корректных неразрывных
+     * путей
      *
      * @param paths корректные пути
      * @return {@code List<List<City>>}
      */
-    public List<List<City>> getCorrectPaths(List<List<City>> paths) {
+    private List<List<City>> getCorrectPaths(List<List<City>> paths) {
         List<List<City>> correctPaths = new ArrayList<>();
 
-        for (int idx = 0; idx < paths.size(); idx++) {
-            List<City> path = paths.get(idx);
+        for (List<City> path : paths) {
+            if (path.isEmpty()) continue;
 
-            if (path.isEmpty()) {
-                continue;
-            }
-
-            if (path.get(0) != firstCity) {
-                continue;
-            }
+            if (path.get(0) != firstCity) continue;
 
             List<City> correctedPath = this.correctPath(path);
             City lastCity = correctedPath.get(correctedPath.size() - 1);
 
-            if (waysList.hasWay(lastCity, firstCity)) {
+            if (ways.hasWay(lastCity, firstCity)) {
                 correctedPath.add(firstCity);
                 correctPaths.add(correctedPath);
             }
@@ -199,25 +229,22 @@ public class LongestPathFinder {
 
     /**
      * Возвращает путь обрезанный на точке разрыва
-     * 
+     *
      * @param path путь
      * @return {@code List<City>}
      */
     private List<City> correctPath(List<City> path) {
-        int size = path.size();
-        int breakPoint = size;
-
-        for (int idx = 1; idx < size; idx++) {
+        for (int idx = 1; idx < path.size(); idx++) {
             City currentCity = path.get(idx);
             City previousCity = path.get(idx - 1);
 
-            boolean hasWay = this.waysList.hasWay(previousCity, currentCity);
+            boolean hasWay = this.ways.hasWay(previousCity, currentCity);
 
             if (!hasWay) {
-                breakPoint = idx;
+                return path.subList(0, idx);
             }
         }
 
-        return path.subList(0, breakPoint);
+        return path;
     }
 }

@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 Eduard Azymov.
+ * Copyright 2018 eazymov.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ package airlines;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Helpers {
+class Helpers {
 
     /**
      * Возвращает список всех возможных вариаций расстановки элементов списка
@@ -36,27 +36,26 @@ public class Helpers {
      * @return {@code List<List<T>}
      */
     public static <T> List<List<T>> getListPermutations(List<T> list) {
-        if (list.isEmpty()) {
-            List<List<T>> result = new ArrayList<>();
+        List<List<T>> result = new ArrayList<>();
 
+        if (list.isEmpty()) {
             result.add(new ArrayList<>());
 
             return result;
         }
 
         T firstElement = list.remove(0);
-        List<List<T>> returnValue = new ArrayList<>();
         List<List<T>> permutations = getListPermutations(list);
 
-        permutations.stream().forEach((List<T> smallerPermutated) -> {
+        permutations.forEach((List<T> smallerPermutated) -> {
             for (int idx = 0; idx <= smallerPermutated.size(); idx++) {
                 List<T> temp = new ArrayList<>(smallerPermutated);
 
                 temp.add(idx, firstElement);
-                returnValue.add(temp);
+                result.add(temp);
             }
         });
 
-        return returnValue;
+        return result;
     }
 }

@@ -23,35 +23,23 @@
  */
 package airlines;
 
-class City {
-    private final String id;
-    private final String name;
+/**
+ *
+ * @author eazymov
+ */
+public enum JsonFields {
+    FIRST_CITY_ID("firstCityId"),
+    CITIES("cities"),
+    WAYS("ways");
     
-    /**
-     *
-     * @param id   уникальный идентификатор города
-     * @param name Название города
-     */
-    public City(String id, String name) {
-        this.id = id;
-        this.name = name;
+    private final String text;
+    
+    JsonFields(final String text) {
+        this.text = text;
     }
     
-    /**
-     * Возвращает поле id
-     *
-     * @return {@code String}
-     */
-    public String getId() {
-        return this.id;
-    }
-    
-    /**
-     * Возвращает поле name
-     *
-     * @return {@code String}
-     */
-    public String getName() {
-        return this.name;
+    @Override
+    public String toString() {
+        return this.text;
     }
 }
