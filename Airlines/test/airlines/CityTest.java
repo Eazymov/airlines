@@ -1,26 +1,26 @@
 package airlines;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CityTest {
+    String id = "id";
+    String name = "name";
+
+    City city;
+
+    @BeforeEach
+    void setup() {
+        city = new City(id, name);
+    }
 
     @Test
     void getId() {
-        String id = "id";
-        String name = "name";
-        City city = new City(id, name);
-
         assert city.getId() == id;
     }
 
     @Test
     void getName() {
-        String id = "id";
-        String name = "name";
-        City city = new City(id, name);
-
         assert city.getName() == name;
     }
 }

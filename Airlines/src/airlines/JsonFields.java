@@ -24,20 +24,19 @@
 package airlines;
 
 /**
- *
  * @author eazymov
  */
 public enum JsonFields {
     FIRST_CITY_ID("firstCityId"),
     CITIES("cities"),
     WAYS("ways");
-    
+
     private final String text;
-    
+
     JsonFields(final String text) {
         this.text = text;
     }
-    
+
     @Override
     public String toString() {
         return this.text;

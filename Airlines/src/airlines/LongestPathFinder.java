@@ -23,16 +23,16 @@
  */
 package airlines;
 
-import java.util.List;
-import java.io.FileReader;
-import java.util.Iterator;
-import java.io.IOException;
-import java.util.ArrayList;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 class LongestPathFinder {
 
@@ -79,7 +79,7 @@ class LongestPathFinder {
      * Читает данные из файла в формате JSON
      *
      * @param src путь к файлу
-     * @throws java.io.IOException возбуждается когда файл не найден
+     * @throws java.io.IOException                   возбуждается когда файл не найден
      * @throws org.json.simple.parser.ParseException возбуждается когда файл имеет некорректный формат
      */
     public void readFromFile(String src) throws IOException, ParseException {

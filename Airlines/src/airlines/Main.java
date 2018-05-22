@@ -23,9 +23,10 @@
  */
 package airlines;
 
-import java.util.List;
-import java.io.IOException;
 import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
+import java.util.List;
 
 public class Main {
 
@@ -39,13 +40,13 @@ public class Main {
         if (args.length == 0) {
             throw new IllegalArgumentException("Path to file is not passed");
         }
-        
+
         try {
             String src = args[0];
             LongestPathFinder longestPathFinder = new LongestPathFinder();
             longestPathFinder.readFromFile(src);
             List<City> longestPath = longestPathFinder.find();
-            
+
             printPath(longestPath);
 
         } catch (IOException e) {

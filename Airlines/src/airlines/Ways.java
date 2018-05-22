@@ -23,8 +23,8 @@
  */
 package airlines;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 class Ways {
     private final Map<String, Map<String, Boolean>> map;
@@ -37,7 +37,7 @@ class Ways {
     }
 
     /**
-     * Добавляет путь между двумя городами 
+     * Добавляет путь между двумя городами
      *
      * @param firstCityId  уникальный идентификатор первого города
      * @param secondCityId уникальный идентификатор второго города
@@ -54,7 +54,7 @@ class Ways {
         map.get(firstCityId).put(secondCityId, true);
         map.get(secondCityId).put(firstCityId, true);
     }
-    
+
     /**
      * Проверяет есть ли путь между двумя городами
      *
@@ -65,7 +65,7 @@ class Ways {
     public boolean hasWay(City firstCity, City secondCity) {
         String firstCityId = firstCity.getId();
         String secondCityId = secondCity.getId();
-        
+
         if (!map.containsKey(firstCityId)) return false;
 
         Map<String, Boolean> firstCityWays = map.get(firstCityId);

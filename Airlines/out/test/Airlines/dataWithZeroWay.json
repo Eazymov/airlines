@@ -1,0 +1,20 @@
+{
+  "firstCityId": "Vancouver",
+  "cities": [
+    {
+      "id": "Vancouver",
+      "name": "Vancouver"
+    }
+  ],
+  "ways": [
+    ["Vancouver", "Edmonton"],
+    ["Vancouver", "Calgary"],
+    ["Calgary", "Winnipeg"],
+    ["Winnipeg", "Toronto"],
+    ["Toronto", "Halifax"],
+    ["Montreal", "Halifax"],
+    ["Edmonton", "Montreal"],
+    ["Edmonton", "Yellowknife"],
+    ["Edmonton", "Calgary"]
+  ]
+}

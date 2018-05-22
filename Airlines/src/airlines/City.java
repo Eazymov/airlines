@@ -26,9 +26,8 @@ package airlines;
 class City {
     private final String id;
     private final String name;
-    
+
     /**
-     *
      * @param id   уникальный идентификатор города
      * @param name Название города
      */
@@ -36,7 +35,7 @@ class City {
         this.id = id;
         this.name = name;
     }
-    
+
     /**
      * Возвращает поле id
      *
@@ -45,7 +44,7 @@ class City {
     public String getId() {
         return this.id;
     }
-    
+
     /**
      * Возвращает поле name
      *
