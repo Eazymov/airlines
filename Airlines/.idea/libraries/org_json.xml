@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Airlines">
+  <library name="org.json">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/dist/Airlines.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../java.libs/org.json.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

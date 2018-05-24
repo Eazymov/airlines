@@ -8,7 +8,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="json-simple" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
@@ -30,5 +29,11 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="org.json" level="project" />
+    <orderEntry type="library" name="json-simple" level="project" />
+    <orderEntry type="library" name="apiguardian-api-1.0.0" level="project" />
+    <orderEntry type="library" name="junit-jupiter-api-5.0.0" level="project" />
+    <orderEntry type="library" name="junit-platform-commons-1.0.0" level="project" />
+    <orderEntry type="library" name="opentest4j-1.0.0" level="project" />
   </component>
 </module>
