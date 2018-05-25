@@ -14,7 +14,7 @@ class MainTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @BeforeEach
-    public void setUpStreams() {
+    public void setupStreams() {
         System.setOut(new PrintStream(outContent));
     }
 
@@ -24,17 +24,11 @@ class MainTest {
     }
 
     @Test
-    void testMain() {
-        String[] noArguments = {};
+    void main() {
         String[] ioExceptionArgs = {"NOT A PATH"};
         String[] parseExceptionArgs = {"./test/wrongFormatData.txt"};
         String[] rightArgs = {"./test/data.json"};
         String[] zeroWayArgs = {"./test/dataWithZeroWay.json"};
-
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.main(noArguments)
-        );
 
         assertThrows(
                 IllegalArgumentException.class,

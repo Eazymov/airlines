@@ -27,6 +27,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -37,12 +38,18 @@ public class Main {
      * @param args аргументы программы
      */
     public static void main(String[] args) {
+        String src;
+
         if (args.length == 0) {
-            throw new IllegalArgumentException("Path to file is not passed");
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Введите путь до json файла с данными");
+            src = scanner.nextLine();
+        } else {
+            src = args[0];
         }
 
         try {
-            String src = args[0];
             LongestPathFinder longestPathFinder = new LongestPathFinder();
             longestPathFinder.readFromFile(src);
             List<City> longestPath = longestPathFinder.find();
@@ -50,10 +57,10 @@ public class Main {
             printPath(longestPath);
 
         } catch (IOException e) {
-            throw new IllegalArgumentException("File not exists");
+            throw new IllegalArgumentException("Файл не существует");
 
         } catch (ParseException e) {
-            throw new IllegalArgumentException("File is incorrect");
+            throw new IllegalArgumentException("Файл имеет некорректный формат");
         }
     }
 
