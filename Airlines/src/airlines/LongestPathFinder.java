@@ -53,7 +53,7 @@ class LongestPathFinder {
      *
      * @param cities список городов
      */
-    private void setCities(List<City> cities) {
+    public void setCities(List<City> cities) {
         this.cities = cities;
     }
 
@@ -62,7 +62,7 @@ class LongestPathFinder {
      *
      * @param waysList набор всех путей между городами
      */
-    private void setWays(Ways waysList) {
+    public void setWays(Ways waysList) {
         this.ways = waysList;
     }
 
@@ -71,7 +71,7 @@ class LongestPathFinder {
      *
      * @param firstCity город с которого начинается путешествие
      */
-    private void setFirstCity(City firstCity) {
+    public void setFirstCity(City firstCity) {
         this.firstCity = firstCity;
     }
 
@@ -176,6 +176,7 @@ class LongestPathFinder {
      * @return {@code City<List>}
      */
     public List<City> find() {
+        List<City> cities = new ArrayList<>(this.cities);
         List<List<City>> allPaths = Helpers.getListPermutations(cities);
         List<List<City>> correctPaths = this.getCorrectPaths(allPaths);
 

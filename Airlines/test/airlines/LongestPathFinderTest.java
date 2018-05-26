@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,10 +39,32 @@ class LongestPathFinderTest {
 
     @Test
     void find() throws IOException, ParseException {
-        longestPathFinder.readFromFile("./test/data.json");
+        City Vancouver = new City("Vancouver", "Vancouver");
+        City Edmonton = new City("Edmonton", "Edmonton");
+        City Winnipeg = new City("Winnipeg", "Winnipeg");
+        ArrayList<City> cities = new ArrayList<>();
 
-        List<City> path = longestPathFinder.find();
+        cities.add(Vancouver);
+        cities.add(Edmonton);
+        cities.add(Winnipeg);
+        Ways ways = new Ways();
 
-        assertNotNull(path);
+        ways.addWay(Vancouver.getName(), Edmonton.getName());
+
+        longestPathFinder.setFirstCity(Vancouver);
+        longestPathFinder.setCities(cities);
+        longestPathFinder.setWays(ways);
+
+        List<City> longestPath = longestPathFinder.find();
+        List<City> expected = Arrays.asList(Vancouver, Edmonton, Vancouver);
+
+        assertTrue(longestPath.equals(expected));
+
+        ways.addWay(Edmonton.getName(), Winnipeg.getName());
+        ways.addWay(Vancouver.getName(), Winnipeg.getName());
+
+        longestPath = longestPathFinder.find();
+
+        assertTrue(longestPath.size() == 4);
     }
 }

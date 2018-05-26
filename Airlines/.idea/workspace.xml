@@ -23,7 +23,8 @@
     <SUITE FILE_PATH="coverage/Airlines$airlines_in_Airlines.ic" NAME="airlines in Airlines Coverage Results" MODIFIED="1527000514012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>airlines.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Airlines$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1526997715239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Airlines$All_in_Airlines.ic" NAME="All in Airlines Coverage Results" MODIFIED="1527361971584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Airlines$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1527361685361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>airlines.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Airlines$WaysTest.ic" NAME="WaysTest Coverage Results" MODIFIED="1526993649139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -34,17 +35,7 @@
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/airlines/MainTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,6 +43,14 @@
         <option value="JUnit5 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\Эдуард\Documents\Курсовая\Airlines\test</dir>
+    </dirStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -65,14 +64,14 @@
         <option value="$PROJECT_DIR$/test/dataWithoutWays.json" />
         <option value="$PROJECT_DIR$/test/dataWithoutCities.json" />
         <option value="$PROJECT_DIR$/test/dataWithourFirstCityId.json" />
-        <option value="$PROJECT_DIR$/test/airlines/LongestPathFinderTest.java" />
         <option value="$PROJECT_DIR$/test/dataWithZeroWays.json" />
         <option value="$PROJECT_DIR$/test/airlines/CityTest.java" />
         <option value="$PROJECT_DIR$/test/airlines/WaysTest.java" />
-        <option value="$PROJECT_DIR$/src/airlines/LongestPathFinder.java" />
         <option value="$PROJECT_DIR$/test/airlines/HelpersTest.java" />
         <option value="$PROJECT_DIR$/src/airlines/Main.java" />
         <option value="$PROJECT_DIR$/test/airlines/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/airlines/LongestPathFinder.java" />
+        <option value="$PROJECT_DIR$/test/airlines/LongestPathFinderTest.java" />
       </list>
     </option>
   </component>
@@ -86,7 +85,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="-4" />
+    <option name="x" value="-5" />
+    <option name="y" value="-10" />
     <option name="width" value="1346" />
     <option name="height" value="732" />
   </component>
@@ -95,24 +95,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Airlines" type="b2602c69:ProjectViewProjectNode" />
               <item name="Airlines" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airlines" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airlines" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Airlines" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Airlines" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="airlines" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Airlines" type="b2602c69:ProjectViewProjectNode" />
@@ -130,6 +118,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -213,7 +202,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="CityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LongestPathFinderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Airlines" />
       <extension name="coverage">
         <pattern>
@@ -224,7 +213,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="airlines" />
-      <option name="MAIN_CLASS_NAME" value="airlines.CityTest" />
+      <option name="MAIN_CLASS_NAME" value="airlines.LongestPathFinderTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -236,7 +225,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="WaysTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Airlines" />
       <extension name="coverage">
         <pattern>
@@ -247,7 +236,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="airlines" />
-      <option name="MAIN_CLASS_NAME" value="airlines.WaysTest" />
+      <option name="MAIN_CLASS_NAME" value="airlines.MainTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -323,17 +312,17 @@
     <list>
       <item itemvalue="JUnit.airlines in Airlines" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.CityTest" />
-      <item itemvalue="JUnit.WaysTest" />
       <item itemvalue="JUnit.All in Airlines" />
+      <item itemvalue="JUnit.LongestPathFinderTest" />
+      <item itemvalue="JUnit.MainTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in Airlines" />
+        <item itemvalue="JUnit.MainTest" />
+        <item itemvalue="JUnit.LongestPathFinderTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.airlines in Airlines" />
-        <item itemvalue="JUnit.WaysTest" />
-        <item itemvalue="JUnit.CityTest" />
       </list>
     </recent_temporary>
   </component>
@@ -353,43 +342,45 @@
       <workItem from="1527183372581" duration="5497000" />
       <workItem from="1527262604683" duration="4875000" />
       <workItem from="1527268720527" duration="5710000" />
+      <workItem from="1527358332647" duration="3523000" />
+      <workItem from="1527361911379" duration="65000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="airlines_in_Airlines - 2018.05.22 at 19h 41m 41s.xml">
-      <configuration name="airlines in Airlines" configurationId="JUnit" />
+    <history-entry file="LongestPathFinderTest - 2018.05.26 at 23h 56m 24s.xml">
+      <configuration name="LongestPathFinderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="airlines_in_Airlines - 2018.05.22 at 19h 42m 49s.xml">
-      <configuration name="airlines in Airlines" configurationId="JUnit" />
+    <history-entry file="LongestPathFinderTest - 2018.05.26 at 23h 59m 41s.xml">
+      <configuration name="LongestPathFinderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="airlines_in_Airlines - 2018.05.22 at 19h 43m 04s.xml">
-      <configuration name="airlines in Airlines" configurationId="JUnit" />
+    <history-entry file="LongestPathFinderTest - 2018.05.27 at 00h 00m 02s.xml">
+      <configuration name="LongestPathFinderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="airlines_in_Airlines - 2018.05.22 at 19h 43m 12s.xml">
-      <configuration name="airlines in Airlines" configurationId="JUnit" />
+    <history-entry file="LongestPathFinderTest - 2018.05.27 at 00h 00m 10s.xml">
+      <configuration name="LongestPathFinderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="airlines_in_Airlines - 2018.05.22 at 19h 45m 46s.xml">
-      <configuration name="airlines in Airlines" configurationId="JUnit" />
+    <history-entry file="LongestPathFinderTest - 2018.05.27 at 00h 00m 16s.xml">
+      <configuration name="LongestPathFinderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CityTest - 2018.05.22 at 19h 45m 50s.xml">
-      <configuration name="CityTest" configurationId="JUnit" />
+    <history-entry file="LongestPathFinderTest - 2018.05.27 at 00h 00m 41s.xml">
+      <configuration name="LongestPathFinderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="airlines_in_Airlines - 2018.05.24 at 22h 51m 34s.xml">
-      <configuration name="airlines in Airlines" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_Airlines - 2018.05.24 at 23h 52m 41s.xml">
+    <history-entry file="All_in_Airlines - 2018.05.27 at 00h 07m 44s.xml">
       <configuration name="All in Airlines" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Airlines - 2018.05.25 at 22h 31m 44s.xml">
-      <configuration name="All in Airlines" configurationId="JUnit" />
+    <history-entry file="MainTest - 2018.05.27 at 00h 08m 02s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Airlines - 2018.05.26 at 00h 09m 16s.xml">
+    <history-entry file="MainTest - 2018.05.27 at 00h 08m 05s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_Airlines - 2018.05.27 at 00h 12m 51s.xml">
       <configuration name="All in Airlines" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16082000" />
+    <option name="totallyTimeSpent" value="19670000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -414,6 +405,7 @@
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32735425" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.29062957" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
@@ -429,7 +421,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="PlantUML" order="3" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" visible="true" weight="0.29062957" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32882884" />
@@ -455,13 +446,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/airlines/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/airlines/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -552,13 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/dataWithZeroWay.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -671,13 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/airlines/Helpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="23" selection-start-line="23" selection-end-line="60" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/airlines.City">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -749,37 +730,6 @@
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/airlines.LongestPathFinderTest">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>airlines.LongestPathFinderTest</OriginalElement>
-          <nodes>
-            <node x="" y="">airlines.LongestPathFinderTest</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="85.0" y="15.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/airlines/LongestPathFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -903,46 +853,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/airlines.LongestPathFinder">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>airlines.LongestPathFinder</OriginalElement>
-          <nodes>
-            <node x="0.0" y="0.0">airlines.LongestPathFinder</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-224.0" y="-54.0" />
-          <SelectedNodes>
-            <node>airlines.LongestPathFinder</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Methods</Category>
-            <Category>Constructors</Category>
-            <Category>Fields</Category>
-            <Category>Properties</Category>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/airlines/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-289">
           <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/airlines/LongestPathFinderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -953,17 +867,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/airlines/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dataWithZeroWay.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/airlines.LongestPathFinder">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>airlines.LongestPathFinder</OriginalElement>
+          <nodes>
+            <node x="" y="">airlines.LongestPathFinder</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="74.0" y="73.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airlines/Helpers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/airlines/HelpersTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="181">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/airlines/MainTest.java">
+    <entry file="file://$PROJECT_DIR$/test/airlines/LongestPathFinderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state>
+          <caret selection-end-line="69" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/airlines/LongestPathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="178" column="57" selection-start-line="178" selection-start-column="57" selection-end-line="178" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/airlines.LongestPathFinderTest">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>airlines.LongestPathFinderTest</OriginalElement>
+          <nodes>
+            <node x="" y="">airlines.LongestPathFinderTest</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="85.0" y="15.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
