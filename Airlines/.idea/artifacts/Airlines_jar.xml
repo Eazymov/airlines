@@ -3,7 +3,13 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Airlines_jar</output-path>
     <root id="archive" name="Airlines.jar">
       <element id="module-output" name="Airlines" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../java.libs/json-simple-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../java.libs/junit-platform-commons-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../java.libs/json-simple.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../java.libs/junit-jupiter-api-5.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../java.libs/apiguardian-api-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../java.libs/org.json.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../java.libs/opentest4j-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/groovy-all-2.4.12.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

@@ -62,6 +62,12 @@ public class Main {
         } catch (ParseException e) {
             throw new IllegalArgumentException("Файл имеет некорректный формат");
         }
+
+        System.out.println("Нажмите Enter для выхода из программы.");
+
+        try {
+            System.in.read();
+        } catch (Exception ex) {}
     }
 
     /**
